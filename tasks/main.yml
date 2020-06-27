@@ -1,0 +1,14 @@
+---
+# tasks file for handbrake
+
+- name: Setup RPMFusion repositories
+  import_role:
+    name: jaredhocutt.rpmfusion
+
+- name: Install Handbrake
+  dnf:
+    name:
+      - handbrake
+      - handbrake-gui
+    state: present
+  become: yes
